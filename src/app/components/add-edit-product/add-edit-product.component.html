@@ -5,12 +5,12 @@
     <div class="col-lg-4 offset-lg-4">
       <div class="card text-white bg-primary mb-3" style="max-width: 30rem;">
         <div class="card-header">Add Product</div>
-        <div class="card-body d-flex flex-column gap-3">
-          <form action="">
-            <input type="text" class="form-control" name="" id="" placeholder="Name...">
-            <input type="text" class="form-control" name="" id="" placeholder="Description...">
-            <input type="text" class="form-control" name="" id="" placeholder="Price...">
-            <input type="text" class="form-control" name="" id="" placeholder="Stock...">
+        <div class="card-body">
+          <form action="" [formGroup]="form" class="d-flex flex-column gap-3">
+            <input formControlName="name" type="text" class="form-control" name="" id="" placeholder="Name...">
+            <input formControlName="description" type="text" class="form-control" name="" id="" placeholder="Description...">
+            <input formControlName="price" type="text" class="form-control" name="" id="" placeholder="Price...">
+            <input formControlName="stock" type="text" class="form-control" name="" id="" placeholder="Stock...">
             <button type="button" class="btn btn-success">Send</button>
             <button type="button" routerLink="/" class="btn btn-danger">Back Home</button>
           </form>
