@@ -1,1 +1,56 @@
-<p>list-products works!</p>
+<div class="container">
+  <div class="head-products">
+    <h4>Products</h4>
+    <button type="button" class="btn btn-outline-secondary" routerLink="/add">Add Product</button>
+  </div>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Price</th>
+        <th scope="col">Stock</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of lisProducts" class="table-dark">
+        <td>
+          <div class="table-cell">
+            <p class="m-0">
+              {{item.name }}
+            </p>
+          </div>
+        </td>
+        <td>
+          <div class="table-cell">
+            <p class="m-0">
+              {{item.description}}
+            </p>
+          </div>
+        </td>
+        <td>
+          <div class="table-cell">
+            <p class="m-0">
+              {{item.price}}
+            </p>
+          </div>
+        </td>
+        <td>
+          <div class="table-cell">
+            <p class="m-0">
+              {{item.stock}}
+            </p>
+          </div>
+        </td>
+        <td class="">
+          <div class="table-cell">
+            <button type="button" class="btn btn-light btn-sm" routerLink="/edit/{{item.id}}">Edit</button>
+            <button type="button" class="btn btn-danger btn-sm">Delete</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
