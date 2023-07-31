@@ -6,13 +6,31 @@
       <div class="card text-white bg-primary mb-3" style="max-width: 30rem;">
         <div class="card-header">Add Product</div>
         <div class="card-body">
-          <form action="" [formGroup]="form" class="d-flex flex-column gap-3">
+          <form [formGroup]="form" class="d-flex flex-column gap-3" (ngSubmit)="addProduct()">
             <input formControlName="name" type="text" class="form-control" name="" id="" placeholder="Name...">
+            <span *ngIf="form.get('name')?.hasError('required') && form.get('name')?.touched">
+              El nombre es <strong>Obligatorio</strong>
+            </span>
+
             <input formControlName="description" type="text" class="form-control" name="" id="" placeholder="Description...">
-            <input formControlName="price" type="text" class="form-control" name="" id="" placeholder="Price...">
-            <input formControlName="stock" type="text" class="form-control" name="" id="" placeholder="Stock...">
-            <button type="button" class="btn btn-success">Send</button>
-            <button type="button" routerLink="/" class="btn btn-danger">Back Home</button>
+            <span *ngIf="form.get('description')?.hasError('required') && form.get('description')?.touched">
+              La descripción es <strong>Obligatoria</strong>
+            </span>
+
+            <input formControlName="price" type="number" class="form-control" name="" id="" placeholder="Price...">
+            <span *ngIf="form.get('price')?.hasError('required') && form.get('price')?.touched">
+              La precio es <strong>Obligatoria</strong>
+            </span>
+
+            <input formControlName="stock" type="number" class="form-control" name="" id="" placeholder="Stock...">
+            <span *ngIf="form.get('stock')?.hasError('required') && form.get('stock')?.touched">
+              La stock es <strong>Obligatoria</strong>
+            </span>
+
+            <div class="d-flex justify-content-around">
+              <button type="submit" class="btn btn-success" [disabled]="form.invalid" [ngClass]="{'not-allowed': form.invalid}">Send</button>
+              <button type="button" routerLink="/" class="btn btn-danger">Back Home</button>
+            </div>
           </form>
         </div>
       </div>

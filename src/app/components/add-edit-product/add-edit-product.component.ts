@@ -18,4 +18,8 @@ export class AddEditProductComponent {
       stock: [null, Validators.required]
     });
   }
+
+  addProduct() {
+    console.log(this.form.value);
+  }
 }
