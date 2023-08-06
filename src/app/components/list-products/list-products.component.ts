@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Product } from 'src/app/interfaces/product';
+import { ProductService } from 'src/app/services/product.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -8,10 +9,23 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./list-products.component.css']
 })
 
-
 export class ListProductsComponent {
   lisProducts: Product[] = [
-    {id: 1, name: 'Mouse', description: 'Mouse Led', price: 4, stock: 300},
-    {id: 2, name: 'Galaxy30', description: 'Telefono samsung', price: 500, stock: 1200}
+    
   ]
+
+  constructor(private _productService: ProductService){
+
+  }
+
+  ngOnInit(){
+    this.getListProducts();
+  }
+
+  getListProducts()
+  {
+    this._productService.getProducts().subscribe((data) => {
+      this.lisProducts = data;
+    })
+  }
 }
