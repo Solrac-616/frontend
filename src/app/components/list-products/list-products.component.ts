@@ -55,6 +55,5 @@ export class ListProductsComponent {
         this.getListProducts();
       }
     });
-    
   }
 }

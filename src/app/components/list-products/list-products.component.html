@@ -6,7 +6,7 @@
     <button type="button" class="btn btn-outline-secondary" routerLink="/add">Add Product</button>
   </div>
 
-  <table class="table table-hover">
+  <table *ngIf="lisProducts.length > 0" class="table table-hover">
     <thead>
       <tr>
         <th scope="col">Name</th>
@@ -55,4 +55,5 @@
       </tr>
     </tbody>
   </table>
+  <h5 *ngIf="lisProducts.length == 0">No products found</h5>
 </div>
