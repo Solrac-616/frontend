@@ -11,13 +11,15 @@ import { AddEditProductComponent } from './components/add-edit-product/add-edit-
 
 // MODULES
 import { ReactiveFormsModule } from '@angular/forms';
+import { ProgressBarComponent } from './shared/progress-bar/progress-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     ListProductsComponent,
-    AddEditProductComponent
+    AddEditProductComponent,
+    ProgressBarComponent
   ],
   imports: [
     BrowserModule,
