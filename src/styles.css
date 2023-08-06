@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+.swal2-popup
+{
+  background: rgb(111,66,193) !important;
+  color: #ffffff !important;
+}

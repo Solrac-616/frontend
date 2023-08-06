@@ -1,6 +1,6 @@
-<app-progress-bar></app-progress-bar>
+<app-progress-bar *ngIf="loading"></app-progress-bar>
 
-<div class="container">
+<div class="container" *ngIf="!loading">
   <div class="head-products">
     <h4>Products</h4>
     <button type="button" class="btn btn-outline-secondary" routerLink="/add">Add Product</button>
@@ -49,7 +49,7 @@
         <td class="">
           <div class="table-cell">
             <button type="button" class="btn btn-light btn-sm" routerLink="/edit/{{item.id}}">Edit</button>
-            <button type="button" class="btn btn-danger btn-sm">Delete</button>
+            <button (click)="deleteProduct(item.id!)" type="button" class="btn btn-danger btn-sm">Delete</button>
           </div>
         </td>
       </tr>
